@@ -4,8 +4,8 @@
       <button @click="setSelectedComponent('active-goals')">Active Goals</button>
       <button @click="setSelectedComponent('manage-goals')">Manage Goals</button>
     <!-- <am-button></am-button> -->
-    <active-goals v-if="selectedComponent === 'active-goals'"></active-goals>
-    <manage-goals v-if="selectedComponent === 'manage-goals'"></manage-goals>
+    <!-- <active-goals v-if="selectedComponent === 'active-goals'"></active-goals> -->
+    <!-- <manage-goals v-if="selectedComponent === 'manage-goals'"></manage-goals> -->
     <!-- <badge-list></badge-list>
     <user-info
       :full-name="activeUser.name"
@@ -17,6 +17,9 @@
         <h2>{{ slotprops.item }}</h2>
       </template>
     </course-goals> -->
+    <keep-alive>
+      <component :is="selectedComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
